@@ -1,0 +1,7 @@
+exec Aris_BankabakiyeToplamı_exec
+exec aris_MCEK_PORTFOY_SORGUSU_exec
+exec aris_MCEK_TAHSIL_exec
+exec aris_MSENET_PORTFOY_exec
+exec aris_MSENET_TAHSIL_exec
+SELECT SUM(cm_borct-cm_alact) as alıcı_cariBorc FROM TBLCASABIT WHERE CARI_TIP='A'
+SELECT SUM(cm_borct-cm_alact) as Satıcı_cariBorc FROM TBLCASABIT WHERE CARI_TIP='S'
