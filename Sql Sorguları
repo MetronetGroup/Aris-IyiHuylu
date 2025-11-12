@@ -1,0 +1,32 @@
+exec aris_bankabakiyeler_exec
+------------------------------------------------------------------
+SELECT 
+(BORC -ALACAK ) AS BAKIYE  FROM(
+
+	SELECT 
+		SUM(CASE WHEN DURUM = 'A' THEN BAKIYE ELSE 0 END) AS ALACAK,
+		SUM(CASE WHEN DURUM = 'B' THEN BAKIYE ELSE 0 END) AS BORC
+	
+	FROM 
+		aris_bankabakiyeler
+	WHERE 
+		HESAPSEKLI = 'Vadesiz Mevduat'
+
+
+)AS Q
+------------------------------------------------------------------
+exec Aris_BankabakiyeToplamı_exec
+------------------------------------------------------------------
+EXEC dbo.aris_abcxyz_exec
+------------------------------------------------------------------
+exec aris_MCEK_PORTFOY_SORGUSU_exec
+------------------------------------------------------------------
+select SUM(TUTAR) AS MCEKT from aris_MCEK_PORTFOY_SORGUSU
+------------------------------------------------------------------
+SELECT     SUBE_KODU, SC_NO, SC_GIRTRH, VADETRH, SC_CIKTRH, SC_ODETRH, SC_VERENK, SC_ABORCLU, AS_C, SC_VERILENK, SC_VERYCM, SC_BANKNO, SC_SONDUR, SC_YERI, RAPOR_KODU, TUTAR, KURFARKI, SC_ALB_NO, SC_VERB_NO, YERI, C_NUMARA, 
+                  UPDATE_KODU, DOVTIP, DOVTUT, GIRILDIGIYER, FIRMADOVTIP, FIRMADOVTUT, CEKSERI, PLASIYER_KODU, PLASIYER_TARIH, RAP_KOD, GIRIS_BORDRO, CIKIS_BORDRO, YEDEK1, YEDEK2, YEDEK3, YEDEK4, YEDEK5, YEDEK6, YEDEK7, YEDEK8, YEDEK9, 
+                  YEDEK10, PROJE_KODU, KAYITYAPANKUL, KAYITTARIHI, DUZELTMEYAPANKUL, DUZELTMETARIHI, ONAYTIPI, ONAYNUM, VONAYNUM, VONAYTIPI, CEK_SUBE, CEK_IL, CEK_ILCE, IBANNO, YEDEK11, ACIKLAMA1, ACIKLAMA2, ACIKLAMA3, TAHSILODENENTUT, 
+                  ASILBORCLUTCKIMLIKNO, ASILBORCLUVERGI_NUMARASI, REFKOD, KUR
+FROM        dbo.TBLMCEK
+WHERE     (SC_SONDUR = 'B') AND (SC_YERI = 'p') AND (SUBE_KODU = '0')
+------------------------------------------------------------------
