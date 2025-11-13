@@ -8,3 +8,4 @@ SELECT SUM(cm_borct-cm_alact) as alıcı_cariBorc FROM TBLCASABIT WHERE CARI_TIP
 SELECT SUM(cm_borct-cm_alact) as Satıcı_cariBorc FROM TBLCASABIT WHERE CARI_TIP='S'
 exec aris_kasakalan_exec
 select ISNULL(SUM(BAKIYE),0) AS KrediKartıBAKIYE from mtr_BANKABAKIYELER WHERE HESAPSEKLI='Kredi Karti'
+EXEC aris_MCEK_BEKLEYEN_BAKIYE_exec
