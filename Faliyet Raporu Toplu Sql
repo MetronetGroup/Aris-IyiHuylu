@@ -10,3 +10,5 @@ exec aris_kasakalan_exec
 select ISNULL(SUM(BAKIYE),0) AS KrediKartıBAKIYE from mtr_BANKABAKIYELER WHERE HESAPSEKLI='Kredi Karti'
 EXEC aris_MCEK_BEKLEYEN_BAKIYE_exec
 aris_KDV_DAHIL_GENELTOPLAM_exec
+EXEC dbo.aris_plasiyersatıs_RAPORU @Ay = 5;
+
