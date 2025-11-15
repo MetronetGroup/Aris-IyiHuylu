@@ -15,3 +15,9 @@ exec Aris_Borc_Alacak_plasiyer_hareket
 exec Aris_Borc_Alacak_Plasiyer_Carikart_exec
 exec Aris_Borc_Alacak_exec
 exec aris_stok_karlılık_analizi_exec @Ay =5;
+
+EXEC aris_Aris_VadeBugun_TahsilatOdeme_exec
+
+
+
+
