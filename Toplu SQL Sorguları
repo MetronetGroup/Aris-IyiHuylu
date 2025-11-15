@@ -9,6 +9,9 @@ SELECT SUM(cm_borct-cm_alact) as Satıcı_cariBorc FROM TBLCASABIT WHERE CARI_TI
 exec aris_kasakalan_exec
 select ISNULL(SUM(BAKIYE),0) AS KrediKartıBAKIYE from mtr_BANKABAKIYELER WHERE HESAPSEKLI='Kredi Karti'
 EXEC aris_MCEK_BEKLEYEN_BAKIYE_exec
-aris_KDV_DAHIL_GENELTOPLAM_exec
+EXEC aris_KDV_DAHIL_GENELTOPLAM_exec
 EXEC dbo.aris_plasiyersatıs_RAPORU @Ay = 5;
-
+exec Aris_Borc_Alacak_plasiyer_hareket
+exec Aris_Borc_Alacak_Plasiyer_Carikart_exec
+exec Aris_Borc_Alacak_exec
+exec aris_stok_karlılık_analizi_exec @Ay =5;
