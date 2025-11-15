@@ -17,7 +17,7 @@ exec Aris_Borc_Alacak_exec
 exec aris_stok_karlılık_analizi_exec @Ay =5;
 
 EXEC aris_Aris_VadeBugun_TahsilatOdeme_exec
-
+EXEC aris_StokDevirHizi_exec 1, 12, 2025;
 
 
 
